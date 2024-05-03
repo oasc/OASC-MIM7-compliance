@@ -6,6 +6,6 @@ The latest version of the MIMs is available [here](https://oasc.gitbook.io/mims-
 This repository provides tests written in Python to check compliance to the requirements of _MIM7 - Places_. Currently, the following tests are available:
 
 - **Requirement R1**: tests to check whether geospatial data are exposed through OGC WFS and OGC API - Features.
-- **Requirement R2**: tests to check whether a geospatial dataset is encoded according to the GeoPackage specifications.
+- **Requirements R2, R3, R5**: tests to check whether a geospatial dataset is encoded according to the GeoPackage specifications and has unique and persistent identifiers.
 
 For each Requirement, the repository also provides the Python code to generate an API using Flask, which exposes the tests.
