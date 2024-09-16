@@ -8,8 +8,14 @@ app = Flask(__name__)
 
 def check_service():
 
-    url = request.args.get('url', default = '', type = str)
-
+    # 20240826_fix: if more than one parameter is in the url, following code takes into account just the first one
+    # tested with  https://geoserver.epsilon-italia.it/geoserver/LU_sample/ows?service=WFS&amp;version=2.0.0&amp;request=GetCapabilities
+    #url = request.args.get('url', default = '', type = None)
+    # beginning_fix
+    url = request.full_path
+    url = url[url.index("=")+1:]
+    # end_fix
+ 
     # Send a GET request to the service
 
     response = requests.get(url)
